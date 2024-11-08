@@ -22,7 +22,7 @@ spec:
       name: Clone Terraform Repo
       action: github:clone-terraform
       input:
-        repository: 'https://github.com/your-org/aws-terraform-cluster.git'
+        repository: 'https://github.com/rv2023/eksgitops.git'
         branch: 'main'
     - id: terraform-init
       name: Initialize Terraform
