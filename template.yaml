@@ -5,6 +5,7 @@ metadata:
   title: Create AWS Cluster from GitHub
   description: Create a Kubernetes cluster on AWS using Terraform scripts from GitHub
 spec:
+  type: service # or another category that fits your needs
   owner: "team@example.com"
   parameters:
     - title: Cluster Details
