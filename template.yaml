@@ -20,7 +20,7 @@ spec:
   steps:
     - id: clone-repo
       name: Clone Terraform Repo
-      action: github:clone-terraform
+      action: githubCloneAction
       input:
         repository: 'https://github.com/rv2023/eksgitops.git'
         branch: 'main'
