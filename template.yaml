@@ -1,0 +1,31 @@
+apiVersion: scaffolder.backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: aws-cluster-github
+  title: Create AWS Cluster from GitHub
+  description: Create a Kubernetes cluster on AWS using Terraform scripts from GitHub
+spec:
+  owner: "team@example.com"
+  parameters:
+    - title: Cluster Details
+      properties:
+        clusterName:
+          type: string
+          title: Cluster Name
+        environment:
+          type: string
+          title: Environment
+          enum: [dev, staging, prod]
+  steps:
+    - id: clone-repo
+      name: Clone Terraform Repo
+      action: github:clone-terraform
+      input:
+        repository: 'https://github.com/your-org/aws-terraform-cluster.git'
+        branch: 'main'
+    - id: terraform-init
+      name: Initialize Terraform
+      action: terraform:init
+    - id: terraform-apply
+      name: Apply Terraform Configuration
+      action: terraform:apply
